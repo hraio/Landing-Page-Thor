@@ -1,0 +1,50 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.links-menu{
+    display: flex;
+    gap: 32px;
+}
+
+.links-menu a{
+    text-shadow: 2px 2px 2px black;
+    padding: 6px;
+}
+
+.links-menu a:hover{
+    color: white;
+    border-top: 2px solid white;
+}
+
+@media (max-width:768px){
+    .links-menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 65px;
+        font-size: 2.5rem;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    .menu-burger.active ~ .links-menu{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
